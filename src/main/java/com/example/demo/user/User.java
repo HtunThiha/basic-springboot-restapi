@@ -1,6 +1,7 @@
 package com.example.demo.user;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Entity
@@ -13,6 +14,7 @@ public class User {
     @Column(nullable = false)
     private Integer user_id;
 
+    @NotBlank(message = "Username not provided.")
     @Column(unique = true, nullable = false)
     private String username;
 
